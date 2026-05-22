@@ -1,0 +1,2029 @@
+/* Base Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('images/background.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Header Styles --- */
+header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #3a3a3a;
+}
+
+.header-top {
+    background-color: #3a3a3a;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    border-bottom: 5px solid #d4af37; /* Gold line */
+}
+
+.brand-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+}
+
+.brand-text h1 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+
+.brand-text p {
+    font-size: 0.85rem;
+    color: #ccc;
+}
+
+.greeting-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.greeting {
+    font-size: 1.1rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.dark-mode-toggle {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    font-size: 20px;
+}
+
+.dark-mode-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.dark-mode-toggle .toggle-icon {
+    transition: transform 0.3s ease;
+}
+
+.dark-mode-toggle:hover .toggle-icon {
+    transform: rotate(20deg);
+}
+
+/* --- Navigation Styles --- */
+.nav-bar {
+    background-color: white;
+    padding: 0 40px;
+    display: flex;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.nav-bar a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 12px 15px;
+    position: relative;
+}
+
+.nav-bar a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    padding: 40px;
+}
+
+.content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.main-title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    color: #003366;
+}
+
+/* Grid Layout Structure */
+.layout-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 25px;
+    align-items: start;
+}
+
+/* Shared Image Styles */
+.styled-img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.2);
+    display: block;
+}
+
+.logo-img {
+    background-color: #ffffff;
+    padding: 10px;
+}
+
+/* Shared Text Styles */
+.text-block {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.profile-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.profile-name {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+/* Row 1 Positioning */
+.item-globe {
+    grid-column: 1 / 5;
+}
+
+.item-sugden {
+    grid-column: 5 / 7;
+}
+
+.item-imf-text {
+    grid-column: 7 / 11;
+}
+
+.item-imf-logo {
+    grid-column: 11 / 13;
+}
+
+/* Row 2 Positioning */
+.item-defs {
+    grid-column: 1 / 6;
+    margin-top: 20px;
+}
+
+.item-schiliro {
+    grid-column: 6 / 8;
+    margin-top: 10px;
+}
+
+.item-ifi-text {
+    grid-column: 9 / 11;
+    margin-top: 20px;
+}
+
+.item-ifi-logo {
+    grid-column: 11 / 13;
+    margin-top: 10px;
+}
+
+/* Spacing for multiple paragraphs */
+.spacer {
+    margin-bottom: 20px;
+}
+
+/* Section Divider */
+.section-divider {
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, transparent, #d4af37, transparent);
+    margin: 40px 0 30px 0;
+}
+
+/* Definition Section (Defining Economic Globalization) */
+.definition-section {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 25px;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.image-wrapper {
+    width: 100%;
+}
+
+.globe-img {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
+    display: block;
+}
+
+.text-block-def h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #003366;
+}
+
+.text-block-def p {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+/* Section Subtitle */
+.section-subtitle {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #003366;
+}
+
+/* 3-Column Grid for Actors */
+.actors-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    align-items: start;
+    margin-bottom: 30px;
+}
+
+.actor-column {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Lists and Content Spacing */
+.actor-list {
+    list-style: none;
+    padding: 0;
+}
+
+.actor-list li {
+    font-size: 0.85rem;
+    text-align: justify;
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 15px;
+    line-height: 1.5;
+}
+
+/* Bullet indicators */
+.actor-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-weight: bold;
+    color: #d4af37;
+}
+
+/* Wallerstein's World-System Theory Section */
+.wallerstein-section {
+    margin-top: 40px;
+}
+
+/* Top Row: Biography Photo, Text Content, Diagram Layout */
+.top-row-wallerstein {
+    display: grid;
+    grid-template-columns: 180px 1fr 280px;
+    gap: 25px;
+    align-items: start;
+    margin-bottom: 35px;
+}
+
+/* Profile Card Styling */
+.profile-card-wallerstein {
+    text-align: center;
+}
+
+.image-frame-wallerstein {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    background-color: #ddd;
+    aspect-ratio: 3 / 4;
+}
+
+.image-frame-wallerstein img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.profile-card-wallerstein h3 {
+    font-size: 0.9rem;
+    margin-top: 10px;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+/* Intro Text Styling */
+.intro-text-wallerstein h2 {
+    font-size: 1.4rem;
+    color: #003366;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.intro-text-wallerstein p {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: #4a5568;
+    text-align: justify;
+}
+
+/* Diagram Frame */
+.diagram-card-wallerstein {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.diagram-card-wallerstein img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 220px;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Tiers List Section */
+.tiers-section {
+    margin-top: 25px;
+}
+
+.tiers-section h2 {
+    font-size: 1.2rem;
+    color: #003366;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.tiers-list {
+    list-style: none;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.tiers-list li {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 20px;
+    color: #2d3748;
+    text-align: justify;
+}
+
+/* Custom Bullet Point Styling */
+.tiers-list li::before {
+    content: "•";
+    color: #d4af37;
+    font-weight: bold;
+    font-size: 1.2rem;
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
+
+.tiers-list strong {
+    color: #000000;
+    font-weight: 700;
+}
+
+/* The Global Interstate System Section */
+.interstate-section {
+    margin-top: 40px;
+}
+
+.interstate-heading {
+    font-size: 1.6rem;
+    color: #000;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+/* Top Section Grid */
+.top-row-interstate {
+    display: grid;
+    grid-template-columns: 320px 1fr 160px;
+    gap: 25px;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+/* Globe Image */
+.globe-img-container-interstate img {
+    width: 100%;
+    max-height: 240px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    display: block;
+}
+
+/* Definitions Text */
+.definitions-interstate p {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: #2d3748;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.definitions-interstate strong {
+    color: #000;
+    font-weight: 700;
+}
+
+/* Profile Card */
+.profile-card-interstate {
+    text-align: center;
+}
+
+.image-frame-interstate {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    background-color: #ddd;
+    aspect-ratio: 3 / 4;
+}
+
+.image-frame-interstate img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.profile-card-interstate h3 {
+    font-size: 0.85rem;
+    margin-top: 10px;
+    font-weight: 700;
+    color: #000;
+}
+
+/* Bottom Section */
+.bottom-section-interstate {
+    margin-top: 25px;
+}
+
+.sub-heading-interstate {
+    font-size: 1.1rem;
+    color: #003366;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.bottom-row-interstate {
+    display: grid;
+    grid-template-columns: 1fr 200px 1fr;
+    gap: 30px;
+    align-items: end;
+}
+
+.text-block-interstate p {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: #4a5568;
+    text-align: justify;
+}
+
+/* Center Protocol Image */
+.protocol-img-container-interstate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.protocol-img-container-interstate img {
+    width: 100%;
+    max-width: 180px;
+    max-height: 180px;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* Institutions That Govern Globalization Section */
+.institutions-section {
+    margin-top: 40px;
+}
+
+.institutions-title {
+    font-size: 1.5rem;
+    color: #003366;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+/* Institutions Layout Grid */
+.institutions-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+/* Typography for descriptions */
+.institutions-layout p {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: #2d3748;
+    text-align: justify;
+}
+
+.institutions-layout strong {
+    color: #000;
+    font-weight: 700;
+}
+
+/* Row Layouts (Text Left, Image Right) */
+.info-row-institutions {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 22px;
+}
+
+.info-row-institutions p {
+    flex: 1;
+}
+
+.img-wrapper-institutions {
+    flex-shrink: 0;
+    width: 160px;
+}
+
+.img-wrapper-institutions img {
+    width: 100%;
+    height: auto;
+    max-height: 140px;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Column Layouts (Text Top, Wide Image Bottom) */
+.info-col-institutions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 22px;
+}
+
+.img-wrapper-wide-institutions img {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Specific spacing adjustment for the bottom right item */
+.bottom-right-row-institutions {
+    margin-top: 25px;
+}
+
+.left-col-institutions,
+.right-col-institutions {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Globalism vs. Internationalism Section */
+.globalism-section {
+    margin-top: 40px;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.globalism-title {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    color: #003366;
+    font-weight: 700;
+}
+
+/* 3-Column Layout */
+.comparison-layout-global {
+    display: flex;
+    gap: 25px;
+    align-items: stretch;
+}
+
+/* Left Column (Concept Image) */
+.column-left-global {
+    flex: 0 0 280px;
+}
+
+.concept-img-global {
+    width: 100%;
+    max-height: 280px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Middle Column (Text) */
+.column-middle-global {
+    flex: 1;
+}
+
+.column-middle-global ul {
+    list-style: none;
+    padding: 0;
+}
+
+.column-middle-global li {
+    margin-bottom: 15px;
+    text-align: justify;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    position: relative;
+    padding-left: 18px;
+}
+
+.column-middle-global li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #d4af37;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.column-middle-global strong {
+    color: #000;
+    font-weight: 700;
+}
+
+/* Right Column (Authors) */
+.column-right-global {
+    flex: 0 0 240px;
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+}
+
+.author-card-global {
+    text-align: center;
+    width: 110px;
+}
+
+.author-card-global img {
+    width: 100%;
+    height: auto;
+    max-height: 140px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 8px;
+}
+
+.author-card-global p {
+    font-size: 0.8rem;
+    line-height: 1.2;
+}
+
+/* Assumptions Section */
+.assumptions-section-global {
+    margin-top: 30px;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.assumptions-title {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: #003366;
+    font-weight: 700;
+}
+
+.assumptions-section-global p {
+    font-size: 0.9rem;
+    text-align: justify;
+    line-height: 1.6;
+    color: #2d3748;
+}
+
+/* Market Integration Section */
+.market-integration-section {
+    margin-top: 40px;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.market-title {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    color: #003366;
+    font-weight: 700;
+}
+
+/* Layout Grid */
+.three-column-layout-market {
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+}
+
+/* Left Column (Graphics & 2 Authors) */
+.column-left-market {
+    flex: 0 0 280px;
+}
+
+.main-graphic-market {
+    width: 100%;
+    max-height: 260px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    margin-bottom: 12px;
+}
+
+.authors-row-market {
+    display: flex;
+    gap: 12px;
+    justify-content: space-between;
+}
+
+.authors-row-market .author-card-market {
+    flex: 1;
+}
+
+/* Middle Column (Market Integration Text) */
+.column-middle-market {
+    flex: 0 0 240px;
+    text-align: justify;
+    font-size: 0.88rem;
+    line-height: 1.5;
+}
+
+.column-middle-market strong {
+    color: #000;
+    font-weight: 700;
+}
+
+/* Right Column (Complex Text & 1 Author) */
+.column-right-market {
+    flex: 1;
+}
+
+/* Top part of right column */
+.ifi-row-market {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    margin-bottom: 18px;
+}
+
+.ifi-text-market {
+    flex: 1;
+    text-align: justify;
+    font-size: 0.88rem;
+    line-height: 1.5;
+}
+
+.ifi-text-market strong {
+    color: #000;
+    font-weight: 700;
+}
+
+.bhargava-card-market {
+    flex: 0 0 100px;
+}
+
+/* Middle part of right column */
+.corp-intro-market {
+    margin-bottom: 18px;
+    text-align: justify;
+    font-size: 0.88rem;
+    line-height: 1.5;
+}
+
+.corp-intro-market strong {
+    color: #000;
+    font-weight: 700;
+}
+
+/* Bottom part of right column (Split) */
+.tnc-mnc-row-market {
+    display: flex;
+    gap: 25px;
+}
+
+.tnc-col-market,
+.mnc-col-market {
+    flex: 1;
+    text-align: justify;
+    font-size: 0.88rem;
+    line-height: 1.5;
+}
+
+.tnc-col-market strong,
+.mnc-col-market strong {
+    color: #000;
+    font-weight: 700;
+}
+
+/* Reusable Components */
+.author-card-market {
+    text-align: center;
+}
+
+.author-card-market img {
+    width: 100%;
+    height: auto;
+    max-height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 8px;
+}
+
+.author-card-market p {
+    font-size: 0.8rem;
+    line-height: 1.2;
+}
+
+/* Market Integration Continued Section */
+.market-integration-continued {
+    margin-top: 40px;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.market-continued-title {
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+    color: #003366;
+    font-weight: 700;
+}
+
+/* Alternating Layout Rows */
+.layout-row-market {
+    display: flex;
+    gap: 35px;
+    align-items: flex-start;
+    margin-bottom: 35px;
+}
+
+.image-box-market {
+    flex: 0 0 300px;
+}
+
+.image-box-market img {
+    width: 100%;
+    height: auto;
+    max-height: 240px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.text-box-market {
+    flex: 1;
+}
+
+/* Top Row Specific Text Styles */
+.intro-text-market {
+    font-size: 0.95rem;
+    font-weight: bold;
+    margin-bottom: 12px;
+    color: #000;
+}
+
+.integration-list-market {
+    list-style: none;
+    padding: 0;
+}
+
+.integration-list-market li {
+    margin-bottom: 12px;
+    font-size: 0.88rem;
+    text-align: justify;
+    line-height: 1.5;
+    position: relative;
+    padding-left: 18px;
+}
+
+.integration-list-market li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #d4af37;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.integration-list-market strong {
+    color: #000;
+    font-weight: 700;
+}
+
+/* Bottom Row Specific Content Grid */
+.content-group-market {
+    margin-bottom: 20px;
+}
+
+.content-group-market h3 {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #003366;
+    margin-bottom: 8px;
+}
+
+.content-group-market p {
+    font-size: 0.88rem;
+    text-align: justify;
+    line-height: 1.5;
+    color: #2d3748;
+}
+
+/* Adjust layout on the bottom section image box size */
+.row-right-img-market {
+    flex: 0 0 380px;
+}
+
+.row-right-img-market img {
+    max-height: 280px;
+}
+
+/* Key Issues with IFIs Section */
+.key-issues-section {
+    margin-top: 40px;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.key-issues-title {
+    font-size: 2rem;
+    margin-bottom: 35px;
+    color: #003366;
+    font-weight: 700;
+}
+
+/* Layout Rows for Issues */
+.layout-row-issues {
+    display: flex;
+    gap: 35px;
+}
+
+.align-center-issues {
+    align-items: center;
+}
+
+.spacing-large-issues {
+    margin-bottom: 40px;
+}
+
+.text-box-issues {
+    flex: 1;
+}
+
+.issue-text-issues {
+    font-size: 1rem;
+    line-height: 1.7;
+    text-align: justify;
+    color: #2d3748;
+}
+
+.issue-text-issues strong {
+    font-size: 1.05rem;
+    color: #000;
+    font-weight: 700;
+}
+
+/* Image specific sizing for this slide */
+.issue-img-box-issues {
+    flex: 0 0 400px;
+}
+
+.issue-img-box-issues img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Global Corporations Section */
+.global-corporations-section {
+    margin-top: 40px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Top Section: Image and Text */
+.intro-section-corp {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    margin-bottom: 35px;
+}
+
+.intro-image-corp {
+    flex: 0 0 420px;
+}
+
+.intro-image-corp img {
+    width: 100%;
+    max-height: 320px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+}
+
+.intro-text-corp {
+    flex: 1;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-top: 15px;
+}
+
+.intro-text-corp strong {
+    color: #000;
+    font-weight: 700;
+}
+
+.intro-text-corp p {
+    text-align: justify;
+    color: #2d3748;
+}
+
+/* Bottom Section: Heading and List */
+.content-section-corp h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #003366;
+}
+
+.content-section-corp ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+.content-section-corp li {
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-align: justify;
+    position: relative;
+    padding-left: 20px;
+    color: #2d3748;
+}
+
+.content-section-corp li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #d4af37;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    font-size: 0.75rem;
+    color: #777;
+    padding: 20px 0;
+    margin-top: auto;
+    background: transparent;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .layout-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .item-globe,
+    .item-sugden,
+    .item-imf-text,
+    .item-imf-logo,
+    .item-defs,
+    .item-schiliro,
+    .item-ifi-text,
+    .item-ifi-logo {
+        grid-column: 1 / -1;
+        margin-top: 0;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav-links-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .definition-section {
+        grid-template-columns: 1fr;
+    }
+    
+    .actors-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .top-row-wallerstein {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+    }
+    
+    .intro-text-wallerstein p {
+        text-align: center;
+    }
+    
+    .image-frame-wallerstein {
+        max-width: 180px;
+    }
+    
+    .top-row-interstate {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+    
+    .bottom-row-interstate {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+    
+    .sub-heading-interstate {
+        text-align: center;
+    }
+    
+    .institutions-layout {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .info-row-institutions {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .img-wrapper-institutions {
+        width: 100%;
+        max-width: 200px;
+    }
+    
+    .comparison-layout-global {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .column-left-global,
+    .column-right-global {
+        flex: 1 1 auto;
+        max-width: 100%;
+    }
+    
+    .column-right-global {
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+    }
+    
+    .concept-img-global {
+        max-width: 400px;
+        margin: 0 auto;
+        display: block;
+    }
+    
+    .three-column-layout-market {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .column-left-market,
+    .column-middle-market,
+    .column-right-market {
+        flex: 1 1 auto;
+        max-width: 100%;
+    }
+    
+    .authors-row-market {
+        justify-content: center;
+    }
+    
+    .ifi-row-market {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .bhargava-card-market {
+        flex: 0 0 auto;
+        width: 120px;
+    }
+    
+    .tnc-mnc-row-market {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .layout-row-market {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .image-box-market,
+    .row-right-img-market {
+        flex: 1 1 auto;
+        max-width: 100%;
+    }
+    
+    .image-box-market img,
+    .row-right-img-market img {
+        max-width: 500px;
+        margin: 0 auto;
+        display: block;
+    }
+    
+    .layout-row-issues {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .issue-img-box-issues {
+        flex: 1 1 auto;
+        max-width: 100%;
+    }
+    
+    .issue-img-box-issues img {
+        max-width: 500px;
+        margin: 0 auto;
+        display: block;
+    }
+    
+    .spacing-large-issues {
+        margin-bottom: 30px;
+    }
+    
+    .intro-section-corp {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .intro-image-corp {
+        flex: 1 1 auto;
+        max-width: 100%;
+    }
+    
+    .intro-image-corp img {
+        max-width: 500px;
+        margin: 0 auto;
+        display: block;
+    }
+}
+
+
+/* Global Governance Section - Slide Style */
+.global-governance-slide {
+    margin-top: 40px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 25px;
+    border-radius: 8px;
+    position: relative;
+}
+
+/* Main Content Layout */
+.slide-content-governance {
+    display: flex;
+    gap: 35px;
+}
+
+/* Text Column (Left) - Takes up roughly 2/3 of the space */
+.text-column-governance {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.text-column-governance h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #003366;
+    margin-bottom: 10px;
+}
+
+.text-column-governance .section-title-governance {
+    font-size: 1.6rem;
+    margin-top: 15px;
+    color: #003366;
+}
+
+.text-column-governance h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #222;
+    margin-top: 8px;
+}
+
+.text-column-governance ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.text-column-governance li {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #2d3748;
+    text-align: justify;
+    position: relative;
+    padding-left: 20px;
+}
+
+.text-column-governance li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #d4af37;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Image Column (Right) - Takes up roughly 1/3 of the space */
+.image-column-governance-slide {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-wrapper-governance {
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+}
+
+.image-wrapper-governance img {
+    width: 100%;
+    max-height: 280px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.25);
+    border: 2px solid #eee;
+    display: block;
+}
+
+.caption-governance-slide {
+    margin-top: 10px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #000;
+}
+
+/* Responsive for Global Governance Slide */
+@media (max-width: 768px) {
+    .slide-content-governance {
+        flex-direction: column;
+    }
+    
+    .image-column-governance-slide {
+        width: 100%;
+        max-width: 450px;
+        margin: 0 auto;
+    }
+}
+
+
+/* Uncertainty of the Sovereign Territorial State Section */
+.nation-state-section {
+    margin-top: 40px;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+}
+
+.nation-state-title {
+    font-size: 1.6rem;
+    margin-bottom: 35px;
+    color: #003366;
+    font-weight: 700;
+}
+
+.content-grid-nation {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+}
+
+/* Left Column */
+.left-column-nation {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Information Blocks */
+.info-block-nation {
+    margin-bottom: 30px;
+}
+
+.info-block-nation h3 {
+    font-size: 1.05rem;
+    margin-bottom: 12px;
+    color: #003366;
+    font-weight: 700;
+}
+
+.info-block-nation ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+.info-block-nation li {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    text-align: justify;
+    position: relative;
+    padding-left: 20px;
+    color: #2d3748;
+}
+
+.info-block-nation li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #d4af37;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Eric Hobsbawm Section */
+.eric-section-nation {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+}
+
+.eric-img-nation {
+    width: 180px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.eric-section-nation p {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #000;
+}
+
+/* Right Column */
+.right-column-nation {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Nation State Image */
+.nation-img-nation {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    margin-bottom: 20px;
+    margin-left: auto;
+}
+
+/* Key Elements Box */
+.key-elements-nation {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+.key-elements-nation h3 {
+    font-size: 1rem;
+    margin-bottom: 12px;
+    color: #003366;
+    font-weight: 700;
+}
+
+.key-elements-nation p {
+    text-align: justify;
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: #2d3748;
+}
+
+/* Responsive for Nation State Section */
+@media (max-width: 768px) {
+    .content-grid-nation {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .eric-section-nation {
+        margin-top: 30px;
+        justify-content: center;
+    }
+    
+    .nation-img-nation {
+        margin-left: 0;
+        margin-right: auto;
+    }
+}
+
+
+/* The Rise of Non-State Actors Section */
+.non-state-actors-section {
+    margin-top: 40px;
+    padding: 25px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+}
+
+.non-state-title {
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+    color: #003366;
+    font-weight: 700;
+}
+
+/* Layout Rows */
+.content-row-nsa {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+/* DARK MODE STYLES */
+body.dark-mode {
+    background-color: #1a1a1a !important;
+    color: #000000 !important;
+}
+
+body.dark-mode header,
+body.dark-mode .header-top {
+    background-color: #2d2d2d !important;
+}
+
+body.dark-mode .nav-bar {
+    background-color: #ffffff !important;
+}
+
+body.dark-mode .nav-bar a {
+    color: #000000 !important;
+}
+
+body.dark-mode .main-title,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+    color: #000000 !important;
+}
+
+body.dark-mode p,
+body.dark-mode li,
+body.dark-mode span,
+body.dark-mode .text-block,
+body.dark-mode .text-block-def p,
+body.dark-mode .actor-list li,
+body.dark-mode .intro-text-wallerstein p,
+body.dark-mode .tiers-list li,
+body.dark-mode .definitions-interstate p,
+body.dark-mode .text-block-interstate p,
+body.dark-mode .institutions-layout p,
+body.dark-mode .column-middle-global li,
+body.dark-mode .assumptions-section-global p,
+body.dark-mode .column-middle-market,
+body.dark-mode .ifi-text-market,
+body.dark-mode .corp-intro-market,
+body.dark-mode .tnc-col-market,
+body.dark-mode .mnc-col-market,
+body.dark-mode .integration-list-market li,
+body.dark-mode .content-group-market p,
+body.dark-mode .issue-text-issues,
+body.dark-mode .intro-text-corp,
+body.dark-mode .intro-text-corp p,
+body.dark-mode .content-section-corp li,
+body.dark-mode .text-column-governance li,
+body.dark-mode .info-block-nation li,
+body.dark-mode .key-elements-nation p {
+    color: #000000 !important;
+}
+
+body.dark-mode .content-wrapper,
+body.dark-mode .definition-section,
+body.dark-mode .wallerstein-section,
+body.dark-mode .interstate-section,
+body.dark-mode .institutions-section,
+body.dark-mode .globalism-section,
+body.dark-mode .assumptions-section-global,
+body.dark-mode .market-integration-section,
+body.dark-mode .market-integration-continued,
+body.dark-mode .key-issues-section,
+body.dark-mode .global-corporations-section,
+body.dark-mode .global-governance-slide,
+body.dark-mode .nation-state-section,
+body.dark-mode .non-state-actors-section {
+    background-color: #ffffff !important;
+}
+
+body.dark-mode .exit-btn {
+    background-color: #f0c419 !important;
+    color: #000000 !important;
+}
+
+body.dark-mode .exit-btn:hover {
+    background-color: #d4a817 !important;
+}
+
+body.dark-mode strong {
+    color: #000000 !important;
+}
+
+body.dark-mode .profile-name,
+body.dark-mode .profile-card-wallerstein h3,
+body.dark-mode .profile-card-interstate h3,
+body.dark-mode .author-card-global p,
+body.dark-mode .author-card-market p,
+body.dark-mode .caption-governance-slide,
+body.dark-mode .eric-section-nation p {
+    color: #000000 !important;
+}
+
+body.dark-mode footer {
+    background-color: #2d2d2d !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .page-header {
+    background-color: transparent !important;
+}
+
+body.dark-mode .header-buttons {
+    background-color: transparent !important;
+}
+
+/* Reverse row for alternating layout */
+.content-row-nsa.reverse-row-nsa {
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+/* Images */
+.slide-img-nsa {
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.left-img-nsa {
+    width: 350px;
+    height: auto;
+    max-height: 280px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.right-img-nsa {
+    width: 380px;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+/* Text Blocks */
+.text-block-nsa {
+    flex: 1;
+}
+
+.text-block-nsa h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #003366;
+    font-weight: 700;
+}
+
+.text-block-nsa p {
+    text-align: justify;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #2d3748;
+}
+
+/* Unordered List Section */
+.list-section-nsa {
+    margin-top: 20px;
+}
+
+.un-branches-list-nsa {
+    list-style: none;
+    padding-left: 0;
+}
+
+.un-branches-list-nsa li {
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #2d3748;
+    position: relative;
+    padding-left: 20px;
+}
+
+.un-branches-list-nsa li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #d4af37;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.un-branches-list-nsa strong {
+    color: #000;
+    font-weight: 700;
+}
+
+/* Responsive for Non-State Actors Section */
+@media (max-width: 768px) {
+    .content-row-nsa,
+    .content-row-nsa.reverse-row-nsa {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .left-img-nsa,
+    .right-img-nsa {
+        width: 100%;
+        max-width: 450px;
+    }
+}
+
+
+/* The G20+ Section */
+.g20-section {
+    margin-top: 40px;
+    padding: 25px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+}
+
+.g20-title {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    color: #003366;
+    font-weight: 700;
+}
+
+.intro-text-g20 {
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+    text-align: justify;
+    line-height: 1.6;
+    color: #2d3748;
+}
+
+/* Layout Rows */
+.content-row-g20 {
+    display: flex;
+    gap: 35px;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+/* Images */
+.slide-img-g20 {
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.left-img-g20 {
+    width: 380px;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.right-img-g20 {
+    width: 380px;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+/* Text Blocks */
+.text-block-g20 {
+    flex: 1;
+}
+
+.text-aligned-middle-g20 {
+    margin-top: 20px;
+}
+
+.text-block-g20 h3 {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    color: #003366;
+    font-weight: 700;
+}
+
+.text-block-g20 p {
+    text-align: justify;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #2d3748;
+}
+
+/* Lists */
+.bullet-list-g20 {
+    list-style: none;
+    padding-left: 0;
+}
+
+.bullet-list-g20 li {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #2d3748;
+    position: relative;
+    padding-left: 20px;
+}
+
+.bullet-list-g20 li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #d4af37;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Responsive for G20 Section */
+@media (max-width: 768px) {
+    .content-row-g20 {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .left-img-g20,
+    .right-img-g20 {
+        width: 100%;
+        max-width: 450px;
+    }
+}
+
+
+/* Page Header with Exit Button */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.header-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.exit-btn {
+    background-color: #3a3a3a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.exit-btn:hover {
+    background-color: #222;
+}
+
+/* ─── Responsive: 600px ──────────────────────────────────────────────────── */
+@media (max-width: 600px) {
+    .header-top { padding: 10px 15px; }
+    .brand-text h1 { font-size: 1.1rem; }
+    .nav-bar { padding: 0 15px; }
+    main { padding: 15px; }
+    .content-wrapper { padding: 0; }
+    .main-title { font-size: 1.4rem; }
+    .page-header { flex-direction: column; gap: 10px; align-items: flex-start; }
+    .layout-grid { grid-template-columns: 1fr; }
+    .definition-section { grid-template-columns: 1fr; }
+    .actors-grid { grid-template-columns: 1fr; }
+    .top-row-wallerstein { grid-template-columns: 1fr; }
+    .top-row-interstate { grid-template-columns: 1fr; }
+    .bottom-row-interstate { grid-template-columns: 1fr; }
+    .institutions-layout { grid-template-columns: 1fr; }
+    .comparison-layout-global { flex-direction: column; }
+    .three-column-layout-market { flex-direction: column; }
+    .layout-row-market { flex-direction: column; }
+    .layout-row-issues { flex-direction: column; }
+    .intro-section-corp { flex-direction: column; }
+    .slide-content-governance { flex-direction: column; }
+    .content-grid-nation { grid-template-columns: 1fr; }
+    .content-row-nsa { flex-direction: column; }
+    .content-row-g20 { flex-direction: column; }
+}
+
+/* ─── Responsive: 480px ──────────────────────────────────────────────────── */
+@media (max-width: 480px) {
+    .brand-text h1 { font-size: 0.95rem; }
+    .brand-text p  { font-size: 0.75rem; }
+    .exit-btn { padding: 7px 12px; font-size: 0.85rem; }
+    .main-title { font-size: 1.2rem; }
+    .key-issues-title { font-size: 1.4rem; }
+    .left-img-nsa, .right-img-nsa,
+    .left-img-g20, .right-img-g20 { width: 100%; max-width: 100%; }
+}

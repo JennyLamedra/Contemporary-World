@@ -1,0 +1,134 @@
+/* Dark Mode Toggle Button - Global Styles */
+.greeting {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.dark-mode-toggle {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    font-size: 20px;
+}
+
+.dark-mode-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.dark-mode-toggle .toggle-icon {
+    transition: transform 0.3s ease;
+}
+
+.dark-mode-toggle:hover .toggle-icon {
+    transform: rotate(20deg);
+}
+
+/* Dark Mode Styles - Global */
+body.dark-mode {
+    background-color: #1a1a1a !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode header,
+body.dark-mode .main-header,
+body.dark-mode .header {
+    background-color: #2d2d2d !important;
+}
+
+body.dark-mode nav,
+body.dark-mode .main-nav,
+body.dark-mode .nav-bar {
+    background-color: #2d2d2d !important;
+}
+
+body.dark-mode nav a,
+body.dark-mode .main-nav a,
+body.dark-mode .nav-bar a {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode nav a:hover,
+body.dark-mode .main-nav a:hover,
+body.dark-mode .nav-bar a:hover {
+    color: #f0c419 !important;
+}
+
+body.dark-mode nav a.active,
+body.dark-mode .main-nav a.active,
+body.dark-mode .nav-bar a.active {
+    border-bottom-color: #f0c419 !important;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+    color: #ffffff !important;
+}
+
+body.dark-mode p,
+body.dark-mode li,
+body.dark-mode span {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .content-container,
+body.dark-mode .content-wrapper,
+body.dark-mode .main-content,
+body.dark-mode .section {
+    background-color: #1a1a1a !important;
+}
+
+body.dark-mode .card,
+body.dark-mode .box,
+body.dark-mode .panel,
+body.dark-mode .text-block,
+body.dark-mode .content-box {
+    background-color: #2d2d2d !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode button,
+body.dark-mode .btn,
+body.dark-mode .button {
+    background-color: #f0c419 !important;
+    color: #333 !important;
+    border-color: #f0c419 !important;
+}
+
+body.dark-mode button:hover,
+body.dark-mode .btn:hover,
+body.dark-mode .button:hover {
+    background-color: #d4a817 !important;
+}
+
+body.dark-mode img {
+    opacity: 0.9;
+}
+
+body.dark-mode footer {
+    background-color: #2d2d2d !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .exit-btn,
+body.dark-mode .close-btn {
+    background-color: #f0c419 !important;
+    color: #333 !important;
+}
+
+body.dark-mode .exit-btn:hover,
+body.dark-mode .close-btn:hover {
+    background-color: #d4a817 !important;
+}

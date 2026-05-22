@@ -1,0 +1,840 @@
+/* General Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('images/background.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: #f5f5f5;
+    color: #2c3e50;
+    line-height: 1.6;
+}
+
+/* Dark mode body override */
+body.dark-mode {
+    background-color: #1a1a1a !important;
+    color: #e0e0e0 !important;
+}
+
+/* Header Styles */
+.main-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #3d4a52;
+    color: white;
+    border-bottom: 3px solid #f39c12;
+    padding: 12px 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.title-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-placeholder {
+    width: 45px;
+    height: 45px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 2px solid #f39c12;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+.logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.course-info h1 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 2px;
+    letter-spacing: 0.5px;
+}
+
+.course-info p {
+    font-size: 11px;
+    color: rgba(255,255,255,0.85);
+}
+
+.greeting p {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Navigation Styles */
+.main-nav {
+    background-color: white;
+    padding: 10px 30px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #2c3e50;
+    font-weight: 600;
+    font-size: 14px;
+    padding-bottom: 4px;
+    transition: all 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: #3d4a52;
+}
+
+.main-nav a.active {
+    border-bottom: 2px solid #3d4a52;
+}
+
+/* Main Content Layout */
+.content-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 25px;
+    max-width: 100%;
+    margin: 25px auto;
+    padding: 0 30px;
+    background-color: white;
+}
+
+body.dark-mode .content-container {
+    background-color: #1a1a1a !important;
+}
+
+/* Left Column */
+.left-col {
+    padding-top: 0;
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+body.dark-mode .left-col {
+    background: #2d2d2d !important;
+}
+
+.left-col h2 {
+    font-size: 1.6rem;
+    margin-bottom: 18px;
+    color: #1e3c72;
+    font-weight: 700;
+}
+
+.left-col p {
+    margin-bottom: 18px;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+.list-section h3 {
+    font-size: 1.05rem;
+    margin-bottom: 12px;
+    color: #1e3c72;
+    font-weight: 600;
+}
+
+.list-section ul {
+    margin-left: 20px;
+    margin-bottom: 18px;
+}
+
+.list-section li {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+.list-section li::marker {
+    color: #3d4a52;
+}
+
+/* Middle Column */
+.mid-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.mid-text-block {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    width: 100%;
+}
+
+body.dark-mode .mid-text-block {
+    background: #2d2d2d !important;
+}
+
+.mid-text-block h3 {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    color: #1e3c72;
+    font-weight: 600;
+}
+
+.mid-text-block p {
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+.mid-text-block ul {
+    margin-left: 20px;
+    margin-bottom: 12px;
+}
+
+.mid-text-block li {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    line-height: 1.7;
+}
+
+.mid-text-block li::marker {
+    color: #3d4a52;
+}
+
+.content-img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.content-img:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.mid-col .top-img {
+    width: 100%;
+}
+
+.mid-col .bottom-img {
+    width: 100%;
+}
+
+/* Right Column */
+.right-col {
+    position: relative;
+    padding-top: 0;
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+body.dark-mode .right-col {
+    background: #2d2d2d !important;
+}
+
+.exit-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #3d4a52;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 13px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+}
+
+.exit-btn:hover {
+    background: #2a3439;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.right-col .content-img {
+    margin-bottom: 20px;
+    margin-top: 45px;
+}
+
+.difficult-section {
+    margin-top: 20px;
+}
+
+.difficult-section h3 {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    color: #1e3c72;
+    font-weight: 600;
+}
+
+.difficult-section p {
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+.difficult-section ul {
+    margin-left: 20px;
+    margin-bottom: 12px;
+}
+
+.difficult-section li {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    line-height: 1.7;
+}
+
+.difficult-section li::marker {
+    color: #3d4a52;
+}
+
+.difficult-section h4 {
+    font-size: 1rem;
+    margin-top: 18px;
+    margin-bottom: 10px;
+    color: #1e3c72;
+    font-weight: 600;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    font-size: 12px;
+    color: white;
+    margin-top: 30px;
+    background-color: #3d4a52;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .content-container {
+        grid-template-columns: 1fr;
+        padding: 0 25px;
+    }
+    
+    .exit-btn {
+        position: static;
+        margin-bottom: 15px;
+        display: inline-block;
+    }
+}
+
+
+/* Section Divider */
+.section-divider {
+    width: 90%;
+    max-width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #3d4a52, transparent);
+    margin: 40px auto 30px auto;
+}
+
+/* Effectiveness and Enforcement Section */
+.content-container-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 25px;
+    max-width: 100%;
+    margin: 30px auto;
+    padding: 25px 30px;
+    background-color: white;
+}
+
+body.dark-mode .content-container-2 {
+    background-color: #1a1a1a !important;
+}
+
+/* Column and Text Styling */
+.column-2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.content-img-2 {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 18px;
+}
+
+.mt-15-2 {
+    margin-top: 15px;
+}
+
+.text-block-2 h3 {
+    font-size: 1.05rem;
+    margin-bottom: 12px;
+    color: #1e3c72;
+    font-weight: 600;
+}
+
+.text-block-2 p {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+    line-height: 1.7;
+}
+
+.text-block-2 ul {
+    margin-left: 20px;
+    margin-bottom: 12px;
+}
+
+.text-block-2 li {
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+    line-height: 1.7;
+}
+
+.text-block-2 li::marker {
+    color: #3d4a52;
+}
+
+.conclusion-text, .example-text {
+    margin-top: 10px;
+}
+
+/* Responsive adjustments for second section */
+@media (max-width: 1024px) {
+    .content-container-2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* The International Criminal Court Section */
+.content-container-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 25px;
+    max-width: 100%;
+    margin: 30px auto;
+    padding: 25px 30px;
+    background-color: white;
+}
+
+body.dark-mode .content-container-3 {
+    background-color: #1a1a1a !important;
+}
+
+/* Column and Text Styling */
+.column-3 {
+    display: flex;
+    flex-direction: column;
+}
+
+.content-img-3 {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 18px;
+}
+
+.mt-15-3 {
+    margin-top: 15px;
+}
+
+.mt-20-3 {
+    margin-top: 20px;
+}
+
+.text-block-3 h3 {
+    font-size: 1.05rem;
+    margin-bottom: 12px;
+    color: #1e3c72;
+    font-weight: 600;
+}
+
+.text-block-3 p {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+    line-height: 1.7;
+}
+
+.text-block-3 ul {
+    margin-left: 20px;
+    margin-bottom: 12px;
+}
+
+.text-block-3 li {
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+    line-height: 1.7;
+}
+
+.text-block-3 li::marker {
+    color: #3d4a52;
+}
+
+/* Responsive adjustments for third section */
+@media (max-width: 1024px) {
+    .content-container-3 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* What is International Law Section (Simple Version) - Layout Framework */
+.page-wrapper-intlaw2 {
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 0 30px;
+}
+
+.page-header-row-intlaw2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.page-header-row-intlaw2 h2 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #111;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* Content Grid Setup */
+.content-grid-intlaw2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.column-intlaw2 {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Text & Typography Configurations */
+.text-block-intlaw2 h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #222;
+    border-bottom: 3px solid #d4af37;
+    padding-bottom: 6px;
+    display: inline-block;
+}
+
+.text-block-intlaw2 p {
+    font-size: 14.5px;
+    color: #333;
+    text-align: justify;
+    line-height: 1.6;
+}
+
+/* Image Configurations */
+.content-img-intlaw2 {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 6px;
+}
+
+.bordered-img-intlaw2 {
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Spacing Helpers */
+.mt-20-intlaw2 { 
+    margin-top: 20px; 
+}
+
+/* Responsive Adaptive Adjustments */
+@media (max-width: 1100px) {
+    .content-grid-intlaw2 {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .content-grid-intlaw2 {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .page-header-row-intlaw2 {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+}
+
+/* Sources of International Law Section - Layout Framework */
+.page-wrapper-sources {
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 0 30px;
+}
+
+.page-header-row-sources {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.page-header-row-sources h2 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #111;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* Content Grid Setup */
+.content-grid-sources {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.column-sources {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Text & Typography Configurations */
+.text-block-sources h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #222;
+    border-bottom: 3px solid #d4af37;
+    padding-bottom: 6px;
+    display: inline-block;
+}
+
+.text-block-sources p {
+    font-size: 14.5px;
+    color: #333;
+    text-align: justify;
+    line-height: 1.6;
+}
+
+/* Image Configurations */
+.content-img-sources {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 6px;
+}
+
+.bordered-img-sources {
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Spacing Helpers */
+.mt-20-sources { 
+    margin-top: 20px; 
+}
+
+/* Responsive Adaptive Adjustments */
+@media (max-width: 1100px) {
+    .content-grid-sources {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .content-grid-sources {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .page-header-row-sources {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+}
+
+
+/* Dark Mode Toggle Button */
+.greeting {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.dark-mode-toggle {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    font-size: 20px;
+}
+
+.dark-mode-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.dark-mode-toggle .toggle-icon {
+    transition: transform 0.3s ease;
+}
+
+.dark-mode-toggle:hover .toggle-icon {
+    transform: rotate(20deg);
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+body.dark-mode .main-header {
+    background-color: #2d2d2d;
+}
+
+body.dark-mode .main-nav {
+    background-color: #2d2d2d;
+}
+
+body.dark-mode .main-nav a {
+    color: #e0e0e0;
+}
+
+body.dark-mode .main-nav a:hover {
+    color: #f0c419;
+}
+
+body.dark-mode .main-nav a.active {
+    border-bottom-color: #f0c419;
+}
+
+body.dark-mode .content-container,
+body.dark-mode .content-container-2,
+body.dark-mode .content-container-3 {
+    background-color: #1a1a1a;
+}
+
+body.dark-mode .left-col,
+body.dark-mode .mid-text-block,
+body.dark-mode .right-col {
+    background-color: #2d2d2d;
+    color: #e0e0e0;
+}
+
+body.dark-mode .left-col h2,
+body.dark-mode .list-section h3,
+body.dark-mode .mid-text-block h3,
+body.dark-mode .difficult-section h3,
+body.dark-mode .difficult-section h4,
+body.dark-mode .text-block-2 h3,
+body.dark-mode .text-block-3 h3,
+body.dark-mode .text-block-intlaw2 h3,
+body.dark-mode .text-block-sources h3,
+body.dark-mode .page-header-row-intlaw2 h2,
+body.dark-mode .page-header-row-sources h2 {
+    color: #ffffff;
+}
+
+body.dark-mode .left-col p,
+body.dark-mode .list-section li,
+body.dark-mode .mid-text-block p,
+body.dark-mode .mid-text-block li,
+body.dark-mode .difficult-section p,
+body.dark-mode .difficult-section li,
+body.dark-mode .text-block-2 p,
+body.dark-mode .text-block-2 li,
+body.dark-mode .text-block-3 p,
+body.dark-mode .text-block-3 li,
+body.dark-mode .text-block-intlaw2 p,
+body.dark-mode .text-block-sources p {
+    color: #e0e0e0;
+}
+
+body.dark-mode .exit-btn {
+    background-color: #f0c419;
+    color: #333;
+}
+
+body.dark-mode .exit-btn:hover {
+    background-color: #d4a817;
+}
+
+body.dark-mode .content-img,
+body.dark-mode .content-img-2,
+body.dark-mode .content-img-3,
+body.dark-mode .content-img-intlaw2,
+body.dark-mode .content-img-sources {
+    opacity: 0.9;
+}
+
+body.dark-mode footer {
+    background-color: #2d2d2d;
+    color: #e0e0e0;
+}
+
+/* ─── Responsive: 600px ──────────────────────────────────────────────────── */
+@media (max-width: 600px) {
+    .main-header { padding: 10px 15px; }
+    .header-content { flex-direction: column; gap: 8px; }
+    .course-info h1 { font-size: 16px; }
+    .main-nav { padding: 8px 15px; }
+    .main-nav ul { gap: 15px; }
+    .content-container,
+    .content-container-2,
+    .content-container-3 { padding: 15px; }
+    .page-wrapper-intlaw2,
+    .page-wrapper-sources { padding: 0 15px; }
+}
+
+/* ─── Responsive: 480px ──────────────────────────────────────────────────── */
+@media (max-width: 480px) {
+    .course-info h1 { font-size: 14px; }
+    .course-info p  { font-size: 10px; }
+    .left-col h2    { font-size: 1.3rem; }
+    .exit-btn { padding: 6px 12px; font-size: 12px; }
+}

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - The Contemporary World</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="explore-styles.css">
+</head>
+<body>
+    <header>
+    <div class="header-content">
+        <div class="logo-section">
+            <img src="images/logo.png" alt="CNSC Logo" class="logo">
+            <div class="title-section">
+                <h1>The Contemporary World</h1>
+                <p>Subject: GEC-9 | Instructor: Jeviech Pearl Narido</p>
+            </div>
+        </div>
+
+        <div class="greeting">
+            <p id="greeting-text">Hello, Good Morning...</p>
+            <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
+                    <span class="toggle-icon">🌙</span>
+            </button>
+        </div>
+    </div>
+
+    <nav></nav>
+
+    <div class="nav-links-container">
+        <a href="index.html" class="nav-link">Subject Modules</a>
+        <a href="quiz.html" class="nav-link active">Quiz</a>
+        <a href="index.html#about" class="nav-link">About Us</a>
+    </div>
+</header>
+
+    <main>
+        <!-- Quiz Selection View -->
+        <div id="quiz-selection" class="quiz-selection-container">
+            <h2 class="page-title">Choose Your Quiz Topic</h2>
+            
+            <!-- Random Quiz Card -->
+            <div class="random-quiz-banner">
+                <div class="random-quiz-content">
+                    <div class="random-icon">🎲</div>
+                    <div class="random-text">
+                        <h3>Random Quiz Challenge</h3>
+                        <p>Test your knowledge across all topics! Questions randomly selected from all modules.</p>
+                    </div>
+                    <button class="random-quiz-btn" onclick="startQuiz('random')">Start Random Quiz</button>
+                </div>
+            </div>
+
+            <div class="topic-divider">
+                <span>Or Choose a Specific Topic</span>
+            </div>
+            
+            <div class="quiz-cards-container">
+                <div class="quiz-card" data-topic="international-law">
+                    <div class="quiz-card-header">
+                        <img src="images/Rectangle 11.png" alt="International Law">
+                    </div>
+                    <div class="quiz-card-body">
+                        <h3>What is International Law</h3>
+                        <p>Test your knowledge on the principles and sources of international law</p>
+                        <div class="quiz-stats">
+                            <span class="stat-item">📝 10 Questions</span>
+                            <span class="stat-item">⏱️ 15 mins</span>
+                        </div>
+                        <button class="start-quiz-btn" onclick="startQuiz('international-law')">Start Quiz</button>
+                    </div>
+                </div>
+
+                <div class="quiz-card" data-topic="world-regions">
+                    <div class="quiz-card-header">
+                        <img src="images/Rectangle 12.png" alt="World of Regions">
+                    </div>
+                    <div class="quiz-card-body">
+                        <h3>A World of Regions</h3>
+                        <p>explore your understanding of regional blocs and their significance</p>
+                        <div class="quiz-stats">
+                            <span class="stat-item">📝 10 Questions</span>
+                            <span class="stat-item">⏱️ 15 mins</span>
+                        </div>
+                        <button class="start-quiz-btn" onclick="startQuiz('world-regions')">Start Quiz</button>
+                    </div>
+                </div>
+
+                <div class="quiz-card" data-topic="globalization-structure">
+                    <div class="quiz-card-header">
+                        <img src="images/Rectangle 15.png" alt="Structure of Globalization">
+                    </div>
+                    <div class="quiz-card-body">
+                        <h3>Structure of Globalization</h3>
+                        <p>Examine the key economic and political architecture</p>
+                        <div class="quiz-stats">
+                            <span class="stat-item">📝 10 Questions</span>
+                            <span class="stat-item">⏱️ 15 mins</span>
+                        </div>
+                        <button class="start-quiz-btn" onclick="startQuiz('globalization-structure')">Start Quiz</button>
+                    </div>
+                </div>
+
+                <div class="quiz-card" data-topic="understanding-globalization">
+                    <div class="quiz-card-header">
+                        <img src="images/Rectangle 17.png" alt="Understanding Globalization">
+                    </div>
+                    <div class="quiz-card-body">
+                        <h3>Understanding Globalization</h3>
+                        <p>Define the core concepts and historical dimensions</p>
+                        <div class="quiz-stats">
+                            <span class="stat-item">📝 10 Questions</span>
+                            <span class="stat-item">⏱️ 15 mins</span>
+                        </div>
+                        <button class="start-quiz-btn" onclick="startQuiz('understanding-globalization')">Start Quiz</button>
+                    </div>
+                </div>
+
+                <div class="quiz-card" data-topic="legal-basis">
+                    <div class="quiz-card-header">
+                        <img src="images/Rectangle 19.png" alt="Legal Basis">
+                    </div>
+                    <div class="quiz-card-body">
+                        <h3>Legal Basis of International Relations</h3>
+                        <p>Foundation of relations through formal agreements</p>
+                        <div class="quiz-stats">
+                            <span class="stat-item">📝 10 Questions</span>
+                            <span class="stat-item">⏱️ 15 mins</span>
+                        </div>
+                        <button class="start-quiz-btn" onclick="startQuiz('legal-basis')">Start Quiz</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="history-section">
+                <button class="view-history-btn" onclick="viewHistory()">
+                    📊 View Quiz History
+                </button>
+            </div>
+        </div>
+
+        <!-- Quiz Taking View -->
+        <div id="quiz-taking" class="quiz-taking-container" style="display: none;">
+            <div class="quiz-header">
+                <div class="quiz-info">
+                    <h2 id="quiz-topic-title">Quiz Topic</h2>
+                    <div class="quiz-progress">
+                        <span id="question-counter">Question 1 of 10</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progress-fill"></div>
+                        </div>
+                    </div>
+                </div>
+                <button class="exit-quiz-btn" onclick="exitQuiz()">Exit Quiz</button>
+            </div>
+
+            <div class="quiz-content">
+                <div class="question-card">
+                    <div class="question-type" id="question-type">Multiple Choice</div>
+                    <h3 class="question-text" id="question-text">Question will appear here</h3>
+                    
+                    <div class="answers-container" id="answers-container">
+                        <!-- Answers will be dynamically inserted here -->
+                    </div>
+
+                    <div class="quiz-navigation">
+                        <button class="nav-btn" id="prev-btn" onclick="previousQuestion()" disabled>Previous</button>
+                        <button class="nav-btn primary" id="next-btn" onclick="nextQuestion()">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quiz Results View -->
+        <div id="quiz-results" class="quiz-results-container" style="display: none;">
+            <div class="results-card">
+                <div class="results-header">
+                    <h2>Quiz Completed! 🎉</h2>
+                    <p id="results-topic">Topic Name</p>
+                </div>
+
+                <div class="score-display">
+                    <div class="score-circle">
+                        <svg width="200" height="200">
+                            <circle cx="100" cy="100" r="90" fill="none" stroke="#e0e0e0" stroke-width="12"/>
+                            <circle id="score-circle" cx="100" cy="100" r="90" fill="none" stroke="#4CAF50" stroke-width="12" 
+                                    stroke-dasharray="565.48" stroke-dashoffset="565.48" transform="rotate(-90 100 100)"/>
+                        </svg>
+                        <div class="score-text">
+                            <span id="score-percentage">0%</span>
+                            <span id="score-fraction">0/10</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="results-details">
+                    <div class="detail-item correct">
+                        <span class="detail-icon">✓</span>
+                        <span class="detail-label">Correct Answers</span>
+                        <span class="detail-value" id="correct-count">0</span>
+                    </div>
+                    <div class="detail-item incorrect">
+                        <span class="detail-icon">✗</span>
+                        <span class="detail-label">Incorrect Answers</span>
+                        <span class="detail-value" id="incorrect-count">0</span>
+                    </div>
+                    <div class="detail-item time">
+                        <span class="detail-icon">⏱️</span>
+                        <span class="detail-label">Time Taken</span>
+                        <span class="detail-value" id="time-taken">0:00</span>
+                    </div>
+                </div>
+
+                <div class="results-actions">
+                    <button class="action-btn secondary" onclick="reviewAnswers()">Review Answers</button>
+                    <button class="action-btn primary" onclick="backToSelection()">Take Another Quiz</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quiz History View -->
+        <div id="quiz-history" class="quiz-history-container" style="display: none;">
+            <div class="history-header">
+                <h2>Quiz History</h2>
+                <button class="back-btn" onclick="backToSelection()">← Back to Quizzes</button>
+            </div>
+
+            <div class="history-stats">
+                <div class="stat-card">
+                    <h3 id="total-quizzes">0</h3>
+                    <p>Total Quizzes</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="avg-score">0%</h3>
+                    <p>Average Score</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="best-score">0%</h3>
+                    <p>Best Score</p>
+                </div>
+            </div>
+
+            <div class="history-list" id="history-list">
+                <!-- History items will be dynamically inserted here -->
+            </div>
+        </div>
+
+        <!-- Review Answers View -->
+        <div id="review-answers" class="review-answers-container" style="display: none;">
+            <div class="review-header">
+                <h2>Review Your Answers</h2>
+                <button class="back-btn" onclick="backToResults()">← Back to Results</button>
+            </div>
+
+            <div class="review-list" id="review-list">
+                <!-- Review items will be dynamically inserted here -->
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026. The Contemporary World. All Rights Reserved.</p>
+    </footer>
+
+    <script src="quiz.js"></script>
+    <script src="explore.js"></script>
+</body>
+</html>

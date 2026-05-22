@@ -1,0 +1,937 @@
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #2c3e50;
+}
+
+/* --- Header Styles --- */
+header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #3d4a52;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.header-top {
+    background: #3d4a52;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 30px;
+    border-bottom: 3px solid #f39c12;
+}
+
+.brand-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    width: 45px;
+    height: 45px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+.brand-text h1 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 2px;
+    letter-spacing: 0.5px;
+    color: white;
+}
+
+.brand-text p {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.85);
+}
+
+.greeting {
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* --- Navigation Styles --- */
+.nav-bar {
+    background-color: white;
+    padding: 0 30px;
+    display: flex;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.nav-bar a {
+    text-decoration: none;
+    color: #2c3e50;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 10px 12px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-bar a:hover {
+    color: #3d4a52;
+}
+
+.nav-bar a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #3d4a52;
+}
+
+/* --- Main Content Layout --- */
+main {
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 15px 50px;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.page-header h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+.exit-btn {
+    background: #3d4a52;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+}
+
+.exit-btn:hover {
+    background: #2a3439;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* --- Top Content Section --- */
+.content-top {
+    display: grid;
+    grid-template-columns: 380px 1fr 240px;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 15px;
+    background: white;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.styled-image {
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+.styled-image:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.img-globe {
+    width: 100%;
+    height: auto;
+}
+
+.text-center-block {
+    flex: 1;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.text-center-block h3 {
+    margin: 10px 0 8px 0;
+    font-size: 1.2rem;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.text-center-block p {
+    text-align: justify;
+    margin-bottom: 8px;
+}
+
+.author-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.img-author {
+    width: 100%;
+    height: auto;
+}
+
+.author-card p {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #2c3e50;
+}
+
+/* --- Bottom Content Section --- */
+.content-bottom {
+    display: grid;
+    grid-template-columns: 1fr 260px 1fr 1fr;
+    gap: 20px;
+    align-items: start;
+    background: white;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.bottom-text-box {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+.img-map {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    justify-self: center;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    font-size: 0.75rem;
+    color: white;
+    padding: 12px 0;
+    margin-top: 15px;
+    background: #3d4a52;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+}
+
+/* --- Section Divider --- */
+.section-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #d0d0d0, transparent);
+    margin: 18px 0 15px 0;
+}
+
+/* --- Content Grid for Socioeconomic Section --- */
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 12px;
+    background: white;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.left-column, .right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.section-title {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+/* --- Row Layouts --- */
+.content-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.right-col-row {
+    align-items: flex-start;
+}
+
+/* --- Text Styles --- */
+.text-block {
+    flex: 1;
+    font-size: 0.92rem;
+    line-height: 1.65;
+    text-align: justify;
+}
+
+.text-block h3 {
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.text-block h4 {
+    font-size: 1rem;
+    margin-bottom: 6px;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.text-block p {
+    margin-bottom: 8px;
+}
+
+.text-block p:last-child {
+    margin-bottom: 0;
+}
+
+/* --- Image Styles --- */
+.image-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.styled-img {
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+.styled-img:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.portrait {
+    width: 160px;
+    height: auto;
+}
+
+.landscape {
+    width: 240px;
+    height: auto;
+}
+
+.caption {
+    font-size: 0.8rem;
+    text-align: center;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-top: 4px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 968px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    main {
+        padding: 20px 25px;
+    }
+    
+    .content-top {
+        grid-template-columns: 1fr;
+    }
+    
+    .content-bottom {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- Interrogating Globalization Section --- */
+.top-section {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 18px;
+    margin-bottom: 15px;
+    background: white;
+    padding: 18px 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.interrogate-block {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+}
+
+.main-img {
+    width: 360px;
+    height: auto;
+}
+
+.interrogate-block h2 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    letter-spacing: 0.3px;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+.movement-block {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.side-img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+.movement-block h3 {
+    font-size: 1.05rem;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.text-content p {
+    font-size: 0.92rem;
+    line-height: 1.65;
+    text-align: justify;
+    color: #2c3e50;
+    margin-bottom: 0;
+}
+
+/* --- Flows Section --- */
+.flows-section-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    margin-top: 12px;
+    color: #2c3e50;
+}
+
+.bottom-flows-section {
+    display: grid;
+    grid-template-columns: 1fr 250px 1fr 250px;
+    gap: 15px;
+    align-items: start;
+    background: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.flow-text-box {
+    flex: 1;
+}
+
+.flow-text-box h3 {
+    font-size: 1.08rem;
+    margin-bottom: 6px;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+.flow-text-box p {
+    font-size: 0.92rem;
+    line-height: 1.65;
+    text-align: justify;
+    margin-bottom: 0;
+}
+
+.flow-text-box p strong {
+    display: block;
+    margin-top: 8px;
+    margin-bottom: 4px;
+}
+
+.bottom-img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
+.bottom-img {
+    width: 100%;
+    height: auto;
+}
+
+/* --- Responsive for Interrogating Section --- */
+@media (max-width: 1024px) {
+    .top-section, .bottom-flows-section {
+        grid-template-columns: 1fr;
+    }
+    
+    .interrogate-block {
+        flex-direction: column;
+    }
+}
+
+/* --- Cultural & Political Globalization Section --- */
+.three-col-layout {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 15px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.column:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.staggered-col {
+    padding-top: 20px;
+}
+
+.staggered-col-alt {
+    padding-top: 20px;
+}
+
+.text-card {
+    background: transparent;
+}
+
+.text-card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #2c3e50;
+    font-weight: 700;
+}
+
+.text-card p {
+    font-size: 0.92rem;
+    line-height: 1.65;
+    text-align: justify;
+    color: #2c3e50;
+    margin-bottom: 0;
+}
+
+.top-aligned {
+    margin-bottom: auto;
+}
+
+.bottom-aligned {
+    margin-top: auto;
+}
+
+/* --- Responsive for Cultural Section --- */
+@media (max-width: 1024px) {
+    .three-col-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- Institutions and Actors Section (Perspective Grid) --- */
+.perspective-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 15px;
+    background: white;
+    padding: 20px 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.feature-column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.feature-column .text-block {
+    margin-bottom: 0;
+}
+
+.feature-column .text-block p {
+    margin-bottom: 8px;
+}
+
+.feature-column .text-block h2 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    color: #2c3e50;
+    font-weight: 700;
+}
+
+.stacked-column {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.stacked-row {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    background: #f9f9f9;
+    padding: 12px;
+    border-radius: 6px;
+}
+
+.stacked-row .text-block p {
+    margin-bottom: 6px;
+}
+
+.stacked-row .text-block h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: #2c3e50;
+    font-weight: 700;
+}
+
+.main-feature-img {
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.row-img {
+    width: 260px;
+    height: auto;
+    flex-shrink: 0;
+    border-radius: 6px;
+}
+
+/* --- Responsive Layout for Mobile/Tablets --- */
+@media (max-width: 968px) {
+    .perspective-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stacked-row {
+        flex-direction: column;
+    }
+}
+
+/* --- Globalization Impacts Section (3-Column Grid) --- */
+.content-grid-three {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 15px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.column:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.slide-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.slide-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 900px) {
+    .content-grid-three {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===== DARK MODE STYLES ===== */
+
+/* Greeting Container and Dark Mode Toggle */
+.greeting-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.dark-mode-toggle {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    font-size: 20px;
+}
+
+.dark-mode-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.dark-mode-toggle .toggle-icon {
+    transition: transform 0.3s ease;
+}
+
+.dark-mode-toggle:hover .toggle-icon {
+    transform: rotate(20deg);
+}
+
+/* Dark Mode Body and Background */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+/* Dark Mode Header */
+body.dark-mode header {
+    background-color: #2d2d2d;
+}
+
+body.dark-mode .header-top {
+    background-color: #2d2d2d;
+}
+
+body.dark-mode .brand-text h1 {
+    color: white;
+}
+
+body.dark-mode .brand-text p {
+    color: rgba(255,255,255,0.85);
+}
+
+body.dark-mode .greeting {
+    color: white;
+}
+
+/* Dark Mode Navigation */
+body.dark-mode .nav-bar {
+    background-color: white;
+}
+
+body.dark-mode .nav-bar a {
+    color: #2c3e50;
+}
+
+body.dark-mode .nav-bar a:hover {
+    color: #3d4a52;
+}
+
+body.dark-mode .nav-bar a.active::after {
+    background: #3d4a52;
+}
+
+/* Dark Mode Main Content - ALL TEXT BLACK */
+body.dark-mode main {
+    background-color: #1a1a1a;
+}
+
+body.dark-mode .page-header h2 {
+    color: #000000;
+}
+
+/* Dark Mode Exit Button */
+body.dark-mode .exit-btn {
+    background: #f0c419;
+    color: #333333;
+}
+
+body.dark-mode .exit-btn:hover {
+    background: #d4a817;
+    color: #333333;
+}
+
+/* Dark Mode Content Sections - White Background with Black Text */
+body.dark-mode .content-top,
+body.dark-mode .content-bottom,
+body.dark-mode .content-grid,
+body.dark-mode .top-section,
+body.dark-mode .bottom-flows-section,
+body.dark-mode .three-col-layout .column,
+body.dark-mode .perspective-grid,
+body.dark-mode .content-grid-three .column {
+    background: white;
+    color: #333333;
+}
+
+/* Text inside white-background sections stays dark */
+body.dark-mode .content-top h1,
+body.dark-mode .content-top h2,
+body.dark-mode .content-top h3,
+body.dark-mode .content-top p,
+body.dark-mode .content-top li,
+body.dark-mode .content-top span,
+body.dark-mode .content-bottom h1,
+body.dark-mode .content-bottom h2,
+body.dark-mode .content-bottom h3,
+body.dark-mode .content-bottom p,
+body.dark-mode .content-grid h1,
+body.dark-mode .content-grid h2,
+body.dark-mode .content-grid h3,
+body.dark-mode .content-grid p,
+body.dark-mode .content-grid li,
+body.dark-mode .top-section h1,
+body.dark-mode .top-section h2,
+body.dark-mode .top-section h3,
+body.dark-mode .top-section p,
+body.dark-mode .bottom-flows-section h1,
+body.dark-mode .bottom-flows-section h2,
+body.dark-mode .bottom-flows-section h3,
+body.dark-mode .bottom-flows-section p,
+body.dark-mode .three-col-layout .column h1,
+body.dark-mode .three-col-layout .column h2,
+body.dark-mode .three-col-layout .column h3,
+body.dark-mode .three-col-layout .column p,
+body.dark-mode .perspective-grid h1,
+body.dark-mode .perspective-grid h2,
+body.dark-mode .perspective-grid h3,
+body.dark-mode .perspective-grid p,
+body.dark-mode .content-grid-three .column h1,
+body.dark-mode .content-grid-three .column h2,
+body.dark-mode .content-grid-three .column h3,
+body.dark-mode .content-grid-three .column p {
+    color: #333333 !important;
+}
+
+/* Dark Mode ALL Text Elements - light on dark backgrounds */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+    color: #ffffff !important;
+}
+
+body.dark-mode p,
+body.dark-mode li,
+body.dark-mode span,
+body.dark-mode strong,
+body.dark-mode .text-center-block p,
+body.dark-mode .text-center-block h3,
+body.dark-mode .bottom-text-box p,
+body.dark-mode .text-block p,
+body.dark-mode .text-block h3,
+body.dark-mode .text-block h4,
+body.dark-mode .caption,
+body.dark-mode .author-card p,
+body.dark-mode .text-content p,
+body.dark-mode .text-content h3,
+body.dark-mode .flow-text-box p,
+body.dark-mode .flow-text-box h3,
+body.dark-mode .text-card p,
+body.dark-mode .text-card h2,
+body.dark-mode .section-title,
+body.dark-mode .flows-section-title {
+    color: #e0e0e0 !important;
+}
+
+/* Dark Mode Section Divider */
+body.dark-mode .section-divider {
+    background: linear-gradient(to right, transparent, #555, transparent);
+}
+
+/* Dark Mode Images */
+body.dark-mode img {
+    opacity: 0.9;
+}
+
+/* Dark Mode Footer */
+body.dark-mode footer {
+    background: #2d2d2d;
+    color: white;
+}
+
+/* Dark Mode Stacked Row Background */
+body.dark-mode .stacked-row {
+    background: #f9f9f9;
+}
+
+/* Dark Mode Responsive */
+@media (max-width: 968px) {
+    body.dark-mode .content-top,
+    body.dark-mode .content-bottom,
+    body.dark-mode .content-grid {
+        background: white;
+    }
+}
+
+/* ─── Responsive: 600px ──────────────────────────────────────────────────── */
+@media (max-width: 600px) {
+    .header-top { padding: 10px 15px; }
+    .brand-text h1 { font-size: 1.1rem; }
+    .nav-bar { padding: 0 15px; }
+    main { padding: 10px 15px; }
+    .page-header h2 { font-size: 1.2rem; }
+    .content-top { grid-template-columns: 1fr; padding: 15px; }
+    .content-bottom { grid-template-columns: 1fr; padding: 15px; }
+    .content-grid { grid-template-columns: 1fr; padding: 15px; }
+    .top-section { grid-template-columns: 1fr; padding: 15px; }
+    .bottom-flows-section { grid-template-columns: 1fr; padding: 15px; }
+    .three-col-layout { grid-template-columns: 1fr; }
+    .content-grid-three { grid-template-columns: 1fr; }
+}
+
+/* ─── Responsive: 480px ──────────────────────────────────────────────────── */
+@media (max-width: 480px) {
+    .brand-text h1 { font-size: 0.95rem; }
+    .brand-text p  { font-size: 0.75rem; }
+    .exit-btn { padding: 7px 12px; font-size: 0.85rem; }
+    .interrogate-block { flex-direction: column; }
+    .main-img { width: 100%; }
+    .perspective-grid { padding: 12px; }
+    .stacked-row { flex-direction: column; }
+    .row-img { width: 100%; }
+}
